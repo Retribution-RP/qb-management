@@ -95,6 +95,41 @@ RegisterNetEvent("qb-bossmenu:server:depositMoney", function(amount)
 	TriggerClientEvent('qb-bossmenu:client:OpenMenu', src)
 end)
 
+function AddMoneyOkokBanking(account, amount)
+	if not Accounts[account] then
+		Accounts[account] = 0
+	end
+
+	Accounts[account] = Accounts[account] + amount
+	MySQL.Async.execute('UPDATE management_funds SET amount = ? WHERE job_name = ?', { Accounts[account], account })
+end
+
+function RemoveMoneyOkokBanking(account, amount)
+	local isRemoved = false
+	if amount > 0 then
+		if not Accounts[account] then
+			Accounts[account] = 0
+		end
+
+		if Accounts[account] >= amount then
+			Accounts[account] = Accounts[account] - amount
+			isRemoved = true
+		end
+
+		MySQL.Async.execute('UPDATE management_funds SET amount = ? WHERE job_name = ?', { Accounts[account], account })
+	end
+	return isRemoved
+end
+
+function TransferMoneyOkokBanking(account, amount, iban)
+	if not Accounts[account] then
+		Accounts[account] = 0
+	end
+
+	Accounts[account] = Accounts[account] + amount
+	MySQL.Async.execute('UPDATE management_funds SET amount = ? WHERE iban = ?', { Accounts[account], iban })
+end
+
 QBCore.Functions.CreateCallback('qb-bossmenu:server:GetAccount', function(_, cb, jobname)
 	local result = GetAccount(jobname)
 	cb(result)
