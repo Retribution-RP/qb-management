@@ -47,10 +47,10 @@ Config.BossMenuZones = {
         { coords = vector3(-27.47, -1107.13, 27.27), length = 2.4, width = 1.05, heading = 340.0, minZ = 27.07, maxZ = 27.67 },
     },
     ['uwu'] = {
-        { coords = vector3(-596.16, -1052.69, 22.14), length = 2.4, width = 1.05, heading = 358.86, minZ = 27.07, maxZ = 27.67 },
+        { coords = vector3(-596.16, -1052.69, 22.14), length = 2.4, width = 1.05, heading = 358.86, minZ = 21.87, maxZ = 22.87 },
     },
     ['bean'] = {
-        { coords = vector3(126.77, -1034.53, 29.22), length = 2.6, width = 2.0, heading = 250.0, minZ = 76.943, maxZ = 86.74 },
+        { coords = vector3(126.77, -1034.53, 29.22), length = 2.6, width = 2.0, heading = 250.0, minZ = 28.5, maxZ = 30.1 },
     },
     ['mechanic'] = {
         { coords = vector3(-339.53, -156.44, 44.59), length = 1.15, width = 2.6, heading = 353.0, minZ = 43.59, maxZ = 44.99 },
@@ -82,10 +82,3 @@ Config.GangMenuZones = {
     },
     ]]
 }
-
-Model Name:	prop_food_napkin_01
-Model Hash:	-1317924709
-
-Heading:	250.0
-Coords:		vector3(126.77, -1034.53, 29.22)
-Rotation:	vector3(0.0, 0.0, -110.0)
