@@ -28,11 +28,17 @@ Config.BossMenus = {
     ['mechanic'] = {
         vector3(-339.53, -156.44, 44.59),
     },
+    ['sheriff'] = {
+        vector3(-433.28, 6006.27, 37.0),
+    },
 }
 
 Config.BossMenuZones = {
     ['police'] = {
         { coords = vector3(461.45, -986.2, 30.73), length = 0.35, width = 0.45, heading = 351.0, minZ = 30.58, maxZ = 30.68 } ,
+    },
+    ['sheriff'] = {
+        { coords = vector3(-433.28, 6006.27, 37.0), length = 0.35, width = 0.45, heading = 351.0, minZ = 36.78, maxZ = 38.08 } ,
     },
     ['ambulance'] = {
         { coords = vector3(335.46, -594.52, 43.28), length = 1.2, width = 0.6, heading = 341.0, minZ = 43.13, maxZ = 43.73 },
