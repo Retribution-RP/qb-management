@@ -282,3 +282,17 @@ QBCore.Functions.CreateCallback('qb-bossmenu:getplayers', function(source, cb)
 		end)
 	cb(players)
 end)
+
+RegisterNetEvent("qb-bossmenu:server:updateAccount", function (accountName)
+	local result = MySQL.query.await([[
+		SELECT `amount` 
+		FROM `management_funds` 
+		WHERE `type` = 'boss' AND `job_name` = @accountName
+	]], {
+		["@accountName"] = accountName
+	})
+
+	if not result[1] then return print("Couldn't find " + accountName + " in the table management_funds with type = 'boss'") end
+
+	Accounts[accountName] = result[1].amount
+end)
